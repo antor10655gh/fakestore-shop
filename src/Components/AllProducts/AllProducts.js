@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleProduct from '../SingleProduct/SingleProduct';
 
-const AllProducts = () => {
+const AllProducts = ({addToCart,removeCart}) => {
     const [allProducts, setAllproducts] = useState([]);
     console.log(allProducts);
     useEffect(()=>{
@@ -18,7 +18,7 @@ const AllProducts = () => {
             </div>
             <div className="container mx-auto mt-5 row">
             {
-                allProducts.map(product => <SingleProduct image={product.image} category={product.category} price={product.price}></SingleProduct>)
+                allProducts.map(product => <SingleProduct image={product.image} category={product.category} price={product.price} addToCart={addToCart} removeCart={removeCart}></SingleProduct>)
             }
             </div>
         </div>
