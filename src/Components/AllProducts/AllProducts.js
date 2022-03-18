@@ -18,7 +18,7 @@ const AllProducts = ({addToCart,removeCart}) => {
             </div>
             <div className="container mx-auto mt-5 row">
             {
-                allProducts.map(product => <SingleProduct image={product.image} category={product.category} price={product.price} addToCart={addToCart} removeCart={removeCart}></SingleProduct>)
+                allProducts.map(product => <SingleProduct image={product.image} category={product.category} price={product.price} description={product.description} addToCart={addToCart} removeCart={removeCart}></SingleProduct>)
             }
             </div>
         </div>

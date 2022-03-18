@@ -1,7 +1,9 @@
 import React from 'react';
+import ReactModal from '../ReactModal/ReactModal';
 import './SingleProduct.css'
 
-const SingleProduct = ({image, category, price, addToCart, removeCart}) => {
+const SingleProduct = (props) => {
+    const {image, category, price, description, addToCart, removeCart} = props;
     return (
         <div className='col-md-4 gy-5'>
             <div className='box-shadow p-4'>
@@ -13,7 +15,8 @@ const SingleProduct = ({image, category, price, addToCart, removeCart}) => {
                 <div>
                     <button onClick={addToCart} className='btn btn-success ms-2'>Add Cart</button>
                     <button onClick={removeCart} className='btn btn-danger ms-2'>Remove</button>
-                    <button className='btn btn-info ms-2'>Details</button>
+                    {/* <button className='btn btn-info ms-2'>Details</button> */}
+                    <ReactModal image={image} category={category} price={price} description={description}></ReactModal>
                 </div>
             </div>
         </div>
